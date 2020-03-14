@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuBar = (props) => {
+const MenuBar = ({ handleSubmit, selectedPage }) => {
 
   /*
 
@@ -15,20 +15,20 @@ const MenuBar = (props) => {
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
+      <a className={selectedPage === 'profile' ? "item active" : 'item'} id="profile" onClick={(event) => handleSubmit(event.target.id)}>
+        <i className="user large icon" id="profile" />
       </a>
 
-      <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
+      <a className={selectedPage === 'photo' ? "item active" : 'item'} id="photo" onClick={(event) => handleSubmit(event.target.id)}>
+        <i className="photo large icon" id="photo" />
       </a>
 
-      <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
+      <a className={selectedPage === 'cocktail' ? "item active" : 'item'} id="cocktail" onClick={(event) => handleSubmit(event.target.id)}>
+        <i className="cocktail large icon" id="cocktail" />
       </a>
 
-      <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
+      <a className={selectedPage === 'pokemon' ? "item active" : 'item'} id="pokemon" onClick={(event) => handleSubmit(event.target.id)}>
+        <i className=" themeisle large icon" id="pokemon" />
       </a>
     </div>
   )
